@@ -14,17 +14,16 @@ public class MessageReceiver {
 	@Autowired
 	private ProductRepo productRepo;
 
-	@RabbitListener(queues = "hello")
-	public void onReceiveHello(Product product) {		
-		System.out.println(">> hello >> "+ product);
+	@RabbitListener(queues = "product_event")
+	public void onReceiveProduct(Product product) {		
+		System.out.println(">> product_event>> "+ product);		
 		
-		productRepo.save(product);
-		
+		productRepo.save(product);		
 	}
 	
-	@RabbitListener(queues = "world")
-	public void onReceiveWorld(Product product) {		
-		System.out.println(">> world >> "+ product);		
-	}
+	@RabbitListener(queues = "hello_event")
+	public void onReceiveHello(String message) {		
+		System.out.println(">> hello_event >> "+ message);		
+	}	
 	
 }

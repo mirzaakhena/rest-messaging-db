@@ -20,25 +20,25 @@ public class RabbitConfig {
 	}
 
 	@Bean
-	public Queue queueHello() {
-		return new Queue("hello");
+	public Queue queueProduct() {
+		return new Queue("product_event");
 	}
 
 	@Bean
-	public Queue queueWorld() {
-		return new Queue("world");
+	public Queue queueHello() {
+		return new Queue("hello_event");
 	}
 
+	@Bean
+	public Binding bindingProduct() {
+		return BindingBuilder.bind(queueProduct()).to(exchange()).withQueueName();
+	}
+	
 	@Bean
 	public Binding bindingHello() {
 		return BindingBuilder.bind(queueHello()).to(exchange()).withQueueName();
 	}
-	
-	@Bean
-	public Binding bindingWorld() {
-		return BindingBuilder.bind(queueWorld()).to(exchange()).withQueueName();
-	}
-	
+
 	@Bean
 	public MessageConverter messageConverter() {
 		return new Jackson2JsonMessageConverter();
@@ -50,5 +50,5 @@ public class RabbitConfig {
 		rabbitTemplate.setMessageConverter(messageConverter());
 		return rabbitTemplate;
 	}
-	
+
 }
