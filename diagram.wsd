@@ -2,19 +2,35 @@
 title Rest API and Messaging flow
 autonumber
 actor User
+participant Frontend
+participant Producer
+entity MessageBroker
+participant Consumer
+
+== Demonstrate how to use REST API with POST method and publish message event to message broker ==
 
 User -> Frontend: /send-data
 Frontend -> Producer: POST Product with REST API
-Producer -> MessageBroker: PUBLISH to message broker
-MessageBroker --> Consumer: message CONSUME
-Consumer -> Consumer: INSERT product to Database
+Producer -> MessageBroker: PUBLISH product to message broker
+Producer --> Frontend: Return simple OK
+Frontend --> User: Return simple OK
+
+== Demonstrate how to consumer message and save it to database ==
+
+MessageBroker <-- Consumer: Product event CONSUMEd
+Consumer -> Consumer: INSERT Product to Database
+
+== Demonstrate how to use REST API with Get Method ==
 
 User -> Frontend: /get-data
 Frontend -> Consumer: GET Product with Rest API
 Consumer -> Consumer: SELECT product from Database
 Consumer --> Frontend: Receive Response
+Frontend --> User: return response
 
-Producer -> MessageBroker: send Hello message
-MessageBroker --> Consumer: receive Hello message
+== Sending Simple Hello via Message Broker ==
+
+Producer -> MessageBroker: send Hello event
+MessageBroker <-- Consumer: Hello event CONSUMEd
 
 @enduml
