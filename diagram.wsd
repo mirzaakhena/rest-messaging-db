@@ -11,16 +11,16 @@ participant Consumer
 
 User -> Frontend: /send-data
 Frontend -> Producer: POST Product with REST API
-Producer -> MessageBroker: PUBLISH product to message broker
+Producer -> MessageBroker: PUBLISH product event
 Producer --> Frontend: Return simple OK
 Frontend --> User: Return simple OK
 
-== Demonstrate how to consumer message and save it to database ==
+== Demonstrate how to consume message and save it to database ==
 
-MessageBroker <-- Consumer: Product event CONSUMEd
+MessageBroker <-- Consumer: CONSUME Product event 
 Consumer -> Consumer: INSERT Product to Database
 
-== Demonstrate how to use REST API with Get Method ==
+== Demonstrate how to use REST API with GET Method and query data from database ==
 
 User -> Frontend: /get-data
 Frontend -> Consumer: GET Product with Rest API
@@ -28,9 +28,9 @@ Consumer -> Consumer: SELECT product from Database
 Consumer --> Frontend: Receive Response
 Frontend --> User: return response
 
-== Sending Simple Hello via Message Broker ==
+== Sending another simple Hello message via Message Broker ==
 
 Producer -> MessageBroker: send Hello event
-MessageBroker <-- Consumer: Hello event CONSUMEd
+MessageBroker <-- Consumer: CONSUME Hello event
 
 @enduml
