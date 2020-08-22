@@ -9,4 +9,4 @@ ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mys
 
 mysql.server start
 
-![your-UML-diagram-name](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/jonashackt/plantuml-markdown/master/example-uml.iuml)
+![your-UML-diagram-name](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/mirzaakhena/rest-messaging-db/master/diagram.wsd)
