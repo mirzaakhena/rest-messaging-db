@@ -1,0 +1,20 @@
+@startuml
+title Rest API and Messaging flow
+autonumber
+actor User
+
+User -> Frontend: /send-data
+Frontend -> Producer: POST Product with REST API
+Producer -> MessageBroker: PUBLISH to message broker
+MessageBroker --> Consumer: message CONSUME
+Consumer -> Consumer: INSERT product to Database
+
+User -> Frontend: /get-data
+Frontend -> Consumer: GET Product with Rest API
+Consumer -> Consumer: SELECT product from Database
+Consumer --> Frontend: Receive Response
+
+Producer -> MessageBroker: send Hello message
+MessageBroker --> Consumer: receive Hello message
+
+@enduml
