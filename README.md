@@ -1,6 +1,6 @@
 # rest-messaging-db
 
-This is 3 Application that interact each other with different communication way to simulate very simple microservice. 
+This is 3 Application that interact each other with different way of communication to simulate very simple microservice. 
 * We have REST API with method GET and POST which sending sample Product data.
 * We have Database (MySQL) with INSERT and QUERY 
 * We have Messaging (RabbitMQ) complete with PUBLISH and CONSUME
@@ -8,7 +8,9 @@ This is 3 Application that interact each other with different communication way 
 ![Rest API and Messaging flow](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/mirzaakhena/rest-messaging-db/master/diagram.wsd)
 
 ## Frontend Service
-Since a backend server apps does not have a "physical button" like a user interface, so we use a simple API for triggering the event. This Frontend service only used for simplify the testing process by triggering other 2 API service in Producer and Consumer service. For triggering it you can use browser or curl or postman.
+Since a backend server apps does not have "physical button" like a user interface, so i use a simple API to trigger another API.
+
+This Frontend service only used for simplify the testing process by triggering other 2 API service in Producer and Consumer service. For triggering it you can use browser or curl or postman.
 
 This service expose 2 API
 * *GET* `http://localhost:8080/send-data`. It will call *POST* `http://localhost:8081/products` to send product to Producer Service
