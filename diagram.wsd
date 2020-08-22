@@ -15,7 +15,7 @@ Producer -> MessageBroker: PUBLISH product event
 Producer --> Frontend: Return simple OK
 Frontend --> User: Return simple OK
 
-== Demonstrate how to consume message and save it to database ==
+== Demonstrate how to consume message from message broker and save it to database ==
 
 MessageBroker <-- Consumer: CONSUME Product event 
 Consumer -> Consumer: INSERT Product to Database
