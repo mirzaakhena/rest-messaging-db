@@ -5,15 +5,12 @@ This is 3 Application that interact each other with different way of communicati
 * We have Database (MySQL) with INSERT and QUERY 
 * We have Messaging (RabbitMQ) complete with PUBLISH and CONSUME
 
+## Sequence Diagram
 ![Rest API and Messaging flow](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/mirzaakhena/rest-messaging-db/master/diagram.wsd)
 
-[![Video for application demo](https://img.youtube.com/vi/yaLzOAycYhM/0.jpg)](https://www.youtube.com/watch?v=yaLzOAycYhM)
+## Demo Apps
+https://www.youtube.com/embed/yaLzOAycYhM
 
-    <iframe width="560" height="315"
-src="https://www.youtube.com/embed/yaLzOAycYhM" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
 
 ## Frontend Service
 Since a backend server apps does not have "physical button" like a user interface, so i use a simple API to trigger another API.
