@@ -9,6 +9,12 @@ This is 3 Application that interact each other with different way of communicati
 
 [![Video for application demo](https://img.youtube.com/vi/yaLzOAycYhM/0.jpg)](https://www.youtube.com/watch?v=yaLzOAycYhM)
 
+    <iframe width="560" height="315"
+src="https://www.youtube.com/embed/yaLzOAycYhM" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
+
 ## Frontend Service
 Since a backend server apps does not have "physical button" like a user interface, so i use a simple API to trigger another API.
 
