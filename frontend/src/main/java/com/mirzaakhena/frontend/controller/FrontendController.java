@@ -12,6 +12,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.mirzaakhena.frontend.model.Product;
 
+
+
 @RestController
 public class FrontendController {
 	
@@ -23,6 +25,7 @@ public class FrontendController {
 
 		Product product = new Product(name, price);
 		
+		// send data product via REST API
 		ResponseEntity<String> responseMessage = restTemplate.postForEntity("http://localhost:8081/products", product, String.class);
 		
 		return ResponseEntity.ok(responseMessage.getBody());
@@ -31,6 +34,7 @@ public class FrontendController {
 	@GetMapping("/get-data")
 	public ResponseEntity<?> getData() {
 
+		// get data product via REST API
 		ResponseEntity<Product[]> productsEntity = restTemplate.getForEntity("http://localhost:8082/products", Product[].class);
 		
 		List<Product> products = Arrays.asList(productsEntity.getBody());

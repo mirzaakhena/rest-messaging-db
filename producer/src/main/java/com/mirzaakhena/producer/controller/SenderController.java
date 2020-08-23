@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.mirzaakhena.producer.model.Product;
 
+
 @RestController
 public class SenderController {
 
@@ -17,14 +18,20 @@ public class SenderController {
 
 	@PostMapping("/products")
 	public String publishProduct(@RequestBody Product product) {
+
+		// publish data product to message broker
 		rabbitTemplate.convertAndSend("exchange", "product_event", product);
+		
 		return String.format("message from product_event : %s ", product);
 	}
 	
 	@GetMapping("/hello")
 	public String publishHello() {
 		String message = "Hello World";
+
+		// publish simple hello message to message broker
 		rabbitTemplate.convertAndSend("exchange", "hello_event", message);
+		
 		return String.format("message from hello_event : %s ", message);
 	}	
 
