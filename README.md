@@ -1,6 +1,6 @@
 # rest-messaging-db
 
-This is 3 Application that interact each other with different way of communication to simulate very simple microservice. 
+Those 3 Application interact each other with different way of communication to simulate very simple microservice. 
 * We have REST API with method GET and POST which sending sample Product data.
 * We have Database (MySQL) with INSERT and QUERY 
 * We have Messaging (RabbitMQ) complete with PUBLISH and CONSUME
