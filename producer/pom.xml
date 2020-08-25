@@ -8,7 +8,7 @@
 		<version>2.3.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.brainmatics</groupId>
+	<groupId>com.mirzaakhena</groupId>
 	<artifactId>producer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>producer</name>
